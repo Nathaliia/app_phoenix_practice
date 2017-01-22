@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="<%= contact_path(@conn, :new) %>">New Contact</a>
+	<h1>CONTACTS</h1>
+	<table class="table">
+		<tr>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Phone</td>
+			<td>Address</td>
+			<td>City</td>
+			<td>Actions</td>
+		</tr>
+	<%= for contact <- @contacts do %>
+		<tr>
+			<td><%= contact.name %></td>
+			<td><%= contact.email %></td>
+			<td><%= contact.phone %></td>
+			<td><%= contact.address %></td>
+			<td><%= contact.city %></td>
+			<td>
+				<%= link "Editar", to: contact_path(@conn, :edit, contact), class: "btn btn-info btn-xs" %>
+				<%= link "Delete", to: contact_path(@conn, :delete, contact), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+</body>
+</html>

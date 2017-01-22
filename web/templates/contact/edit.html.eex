@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Edit Contact</h2>
+	<a href="<%= contact_path(@conn, :index)%>">Go back</a>
+	<%= render AppPhoenixPractice.ContactView,"form.html", %{action: contact_path(@conn, :update, @contact.id),changeset: @changeset} %>
+</body>
+</html>

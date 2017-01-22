@@ -1,0 +1,36 @@
+<%= form_for @changeset, @action, fn f -> %>
+	<%= if @changeset.action do %>
+		<div class="alert alert-danger">
+			<p>Oops, something went wrong! Please check the errors below.</p>
+		</div>
+	<% end %>
+	<div class="input_wrapper center_block">
+		<label>Name</label>
+		<%= text_input f, :name, class: "form-control" %>
+		<%= error_tag f, :name %>
+	</div>	
+	<div class="input_wrapper center_block">
+		<label>Email</label>
+		<%= text_input f, :email, class: "form-control" %>
+		<%= error_tag f, :email %>
+	</div>	
+	<div class="input_wrapper center_block">
+		<label>Phone</label>
+		<%= text_input f, :phone, class: "form-control" %>
+		<%= error_tag f, :phone %>
+	</div>	
+	<div class="input_wrapper center_block">
+		<label>Address</label>
+		<%= text_input f, :address, class: "form-control" %>
+		<%= error_tag f, :address %>
+	</div>	
+	<div class="input_wrapper center_block">
+		<label>City</label>
+		<%= text_input f, :city, class: "form-control" %>
+		<%= error_tag f, :city %>
+	</div>
+	<p></p>	
+	 <div class="input_wrapper center_block">
+	    <%= submit "Guardar", class: "form-control" %>
+	 </div>
+<% end %>
