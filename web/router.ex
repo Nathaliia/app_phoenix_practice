@@ -17,6 +17,15 @@ defmodule AppPhoenixPractice.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    get   "/contact", ContactController, :index
+    get   "/contact/:id/edit", ContactController, :edit
+    get   "/contact/new", ContactController, :new
+    post  "/contact", ContactController, :create
+    put   "/contact/:id", ContactController, :update
+    delete "/contact/:id", ContactController, :delete
+
+
   end
 
   # Other scopes may use custom stacks.
